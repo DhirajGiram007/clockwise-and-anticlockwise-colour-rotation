@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div id="plush1" onclick="firstDiv()">
+            <h1>1</h1>
+        </div>
+        <div id="plush2" onclick="secondDiv()">
+            <h1>2</h1>
+        </div>
+    </div>
+    <button id="btn">clockwise</button>
+    <button id="Anti_clockwise">Anti_clockwise</button>
+    <div class="main">
+        <div id="plush3" onclick="fourthDiv()">
+            <h1>3</h1>
+        </div>
+        <div id="plush4" onclick="thiedDiv()">
+            <h1>4</h1>
+        </div>
+    </div>
+
+    <script>
+        const colors = ['red', 'yellow', 'green', 'orange'];
+        const btn = document.getElementById('btn');
+        let random = 0;
+        let buttonColor1 = 0;
+        let buttonColor2 = 1;
+        let buttonColor3 = 2;
+        let buttonColor4 = 3;
+        const body = document.getElementById("plush1");
+        const body1 = document.getElementById("plush2");
+        const body2 = document.getElementById("plush4");
+        const body3 = document.getElementById("plush3");
+        body.style.backgroundColor = colors[buttonColor1];
+        body1.style.backgroundColor = colors[buttonColor2];
+        body2.style.backgroundColor = colors[buttonColor3];
+        body3.style.backgroundColor = colors[buttonColor4];
+        btn.addEventListener('click', function () {
+            console.log(random);
+            random++;
+            if (random <= 3) {
+                if (random == 1) {
+                    buttonColor1 = 3;
+                    buttonColor2 = 0;
+                    buttonColor3 = 1;
+                    buttonColor4 = 2;
+                    console.log("hi 1");
+                } else if (random == 2) {
+                    buttonColor1 = 2;
+                    buttonColor2 = 3;
+                    buttonColor3 = 0;
+                    buttonColor4 = 1;
+                    console.log("hi 2");
+
+                } else if (random == 3) {
+                    buttonColor1 = 1;
+                    buttonColor2 = 2;
+                    buttonColor3 = 3;
+                    buttonColor4 = 0;
+                    console.log("hi 3");
+
+                }
+            } else {
+                buttonColor1 = 0;
+                buttonColor2 = 1;
+                buttonColor3 = 2;
+                buttonColor4 = 3;
+                console.log("hi 0");
+                random = 0;
+            }
+            body.style.backgroundColor = colors[buttonColor1];
+            body1.style.backgroundColor = colors[buttonColor2];
+            body2.style.backgroundColor = colors[buttonColor3];
+            body3.style.backgroundColor = colors[buttonColor4];
+        })
+        Anti_clockwise.addEventListener('click', function () {
+            console.log(random);
+            --random;
+            if (random <= 4 && random > 0) {
+                if (random == 1) {
+                    buttonColor1 = 3;
+                    buttonColor2 = 0;
+                    buttonColor3 = 1;
+                    buttonColor4 = 2;
+                    console.log("hi 1 --");
+                } else if (random == 2) {
+                    buttonColor1 = 2;
+                    buttonColor2 = 3;
+                    buttonColor3 = 0;
+                    buttonColor4 = 1;
+                    console.log("hi 2 --");
+                } else if (random == 3) {
+                    buttonColor1 = 1;
+                    buttonColor2 = 2;
+                    buttonColor3 = 3;
+                    buttonColor4 = 0;
+                    console.log("hi 3 --");
+                }
+            } else {
+                buttonColor1 = 0;
+                buttonColor2 = 1;
+                buttonColor3 = 2;
+                buttonColor4 = 3;
+                console.log("hi 0 --");
+                random = 4;
+            }
+            body.style.backgroundColor = colors[buttonColor1];
+            body1.style.backgroundColor = colors[buttonColor2];
+            body2.style.backgroundColor = colors[buttonColor3];
+            body3.style.backgroundColor = colors[buttonColor4];
+        })
+    </script>
+</body>
+
+</html>

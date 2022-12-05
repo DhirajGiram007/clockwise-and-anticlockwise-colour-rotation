@@ -1,0 +1,15 @@
+.main
+{
+display: flex;
+}
+.main div{
+  /* margin: 15px ; */
+    width: 250px;
+}
+button{
+    width: 248px;
+    height: 100px;
+}
+h1{
+    text-align: center;
+}
